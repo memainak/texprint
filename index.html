@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Texprint | Manufacturer of King, Double & Single Bed Sheets | Jhargram</title>
+    <meta name="description" content="Texprint (Est. 1990) - Manufacturer of high-quality King, Double, Medium, and Single bed sheets with pillow covers. Wholesale & Retail home furnishings in Jhargram, West Bengal.">
+    <meta name="keywords" content="Texprint, Bed sheets manufacturer, Jhargram, West Bengal, King size bedsheet, Cotton bed sheets, Pillow covers, Home Furnishing, Double bed sheet, Side pillow cover">
+    <meta name="author" content="Texprint">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            600: '#2c5282', // Deep Indigo
+                            800: '#1a365d',
+                            900: '#102a43',
+                        },
+                        accent: {
+                            500: '#d69e2e', // Gold for awards
+                        },
+                        whatsapp: {
+                            500: '#25D366',
+                            600: '#128C7E',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade In Animation classes */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Hero Overlay */
+        .hero-overlay {
+            background: linear-gradient(rgba(16, 42, 67, 0.7), rgba(16, 42, 67, 0.5));
+        }
+
+        /* Whatsapp Pulse */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-pulse {
+            animation: pulse-green 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-gray-50">
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919434037681?text=Hi%20Texprint,%20I%20am%20interested%20in%20your%20products." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-whatsapp-500 hover:bg-whatsapp-600 text-white p-4 rounded-full shadow-lg transition-all hover:scale-110 flex items-center gap-3 group whatsapp-pulse"
+       aria-label="Chat on WhatsApp">
+        <i data-lucide="message-circle" class="w-8 h-8 fill-current"></i>
+        <span class="hidden group-hover:block font-bold whitespace-nowrap pr-2">Chat with Us</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-40 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <!-- Logo Image -->
+                    <a href="#" class="flex-shrink-0 flex items-center gap-2">
+                        <!-- Placeholder for the actual logo file -->
+                        <img src="texprint-logo.png" 
+                             alt="Texprint Logo" 
+                             class="h-12 w-auto object-contain"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <!-- Fallback if image not found (keeps the text version visible just in case) -->
+                        <div class="hidden items-center gap-2">
+                            <i data-lucide="layers" class="h-8 w-8 text-brand-600"></i>
+                            <span class="font-serif text-2xl font-bold text-brand-800 tracking-wide">Texprint</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-brand-600 font-medium transition">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-brand-600 font-medium transition">About Us</a>
+                    <a href="#products" class="text-gray-600 hover:text-brand-600 font-medium transition">Products</a>
+                    <a href="#impact" class="text-gray-600 hover:text-brand-600 font-medium transition">Social Impact</a>
+                    <a href="#contact" class="bg-brand-600 text-white px-5 py-2 rounded-full font-medium hover:bg-brand-800 transition shadow-lg transform hover:-translate-y-0.5">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-600 focus:outline-none p-2">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50">About Us</a>
+                <a href="#products" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50">Products</a>
+                <a href="#impact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50">Community</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-brand-600 font-bold bg-gray-50">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-20 h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Fallback -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="images.unsplash.com/photo-1522771753035-1a5b6562f3ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
+                alt="Texprint Bed Sheets and Home Furnishings" 
+                class="w-full h-full object-cover"
+                onerror="this.src='https://placehold.co/1920x1080/eee/ccc?text=Texprint+Fabrics'"
+            >
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto fade-in-section">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-600/30 border border-brand-200 text-brand-50 text-sm font-semibold mb-4 backdrop-blur-sm">
+                Established 1990
+            </span>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl text-white font-bold leading-tight mb-6">
+                Weaving Comfort into <br/>Every Home
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto font-light">
+                From the heart of West Bengal to households across India. Manufacturer of premium King, Double, and Single bed sheet sets.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#products" class="bg-white text-brand-900 px-8 py-3 rounded-full font-bold hover:bg-brand-50 transition shadow-lg">
+                    View Catalog
+                </a>
+                <a href="https://wa.me/919434037681" target="_blank" class="bg-whatsapp-500 border-2 border-whatsapp-500 text-white px-8 py-3 rounded-full font-bold hover:bg-whatsapp-600 hover:border-whatsapp-600 transition flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="fade-in-section">
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-900 font-bold mb-6 relative">
+                        Our Legacy
+                        <span class="block h-1 w-20 bg-accent-500 mt-2"></span>
+                    </h2>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        <strong class="text-brand-800">Texprint</strong> is a proprietorship concern established in the year 1990 by a visionary <span class="text-brand-600 font-semibold">woman entrepreneur</span>. What started as a local initiative has grown into a renowned manufacturing and processing unit for home furnishing items.
+                    </p>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        Our brand name <strong>'Texprint'</strong> has become a household name, synonymous with quality and trust. We market our products throughout the country, with a deep-rooted presence in every corner of West Bengal.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="border-l-4 border-brand-600 pl-4">
+                            <span class="block text-3xl font-bold text-brand-800">30+</span>
+                            <span class="text-gray-500 text-sm">Years of Excellence</span>
+                        </div>
+                        <div class="border-l-4 border-accent-500 pl-4">
+                            <span class="block text-3xl font-bold text-brand-800">Govt</span>
+                            <span class="text-gray-500 text-sm">Recognized & Awarded</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Grid -->
+                <div class="relative fade-in-section">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img 
+                            src="images/stock.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                            class="rounded-lg shadow-xl w-full h-64 object-cover transform translate-y-8" 
+                            alt="Huge Stocks with in house manufacturing process"
+                        >
+                        <img 
+                            src="images/store.jpg??ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                            class="rounded-lg shadow-xl w-full h-64 object-cover" 
+                            alt="Brand Showroom In Jhargram"
+                        >
+
+                    </div>
+                    <!-- Award Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-2xl max-w-xs border-t-4 border-accent-500 hidden md:block">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="award" class="h-8 w-8 text-accent-500 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Award Winning</h4>
+                                <p class="text-xs text-gray-500">Recognized by Govt & Private Organizations for high quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder's Note Section -->
+    <section class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12 bg-brand-900 rounded-3xl overflow-hidden shadow-2xl">
+                <div class="md:w-1/2 relative h-96 md:h-auto">
+                    <img
+                    src="images/founder.jpg?q=80&w=1060&auto=format&fit=crop" 
+                        alt="Founder of Texprint" 
+                        class="class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-900/50 to-transparent md:hidden"></div>
+                </div>
+                <div class="md:w-1/2 p-10 md:py-16 md:pr-16 text-white fade-in-section">
+                    <div class="inline-block p-2 bg-accent-500/20 rounded-lg mb-4">
+                        <i data-lucide="quote" class="h-6 w-6 text-accent-500"></i>
+                    </div>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6">A Note from the Founder</h2>
+                    <p class="text-brand-100 text-lg leading-relaxed italic mb-6">
+                        "When I started Texprint in 1990, my vision was simple: to bring the warmth of authentic craftsmanship into every home. What began as a small dream in Jhargram has grown into a family of artisans and satisfied customers across India. We don't just manufacture bed sheets; we weave stories of comfort, resilience, and quality that stand the test of time."
+                    </p>
+                    <div>
+                        <p class="font-serif text-xl font-bold text-white">Proprietor</p>
+                        <p class="text-accent-500">Texprint, Est. 1990</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Impact Section -->
+    <section id="impact" class="py-20 bg-brand-50 border-t border-brand-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-section">
+            <div class="max-w-3xl mx-auto">
+                <div class="inline-flex items-center justify-center p-3 bg-white rounded-full shadow-sm mb-6">
+                    <i data-lucide="heart-handshake" class="h-6 w-6 text-red-500 mr-2"></i>
+                    <span class="text-brand-800 font-semibold">Community First Approach</span>
+                </div>
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-900 font-bold mb-6">Empowering Jhargram</h2>
+                <p class="text-gray-600 text-lg mb-10 leading-relaxed">
+                    Texprint is situated in one of the most developing areas of the state. We take immense pride in being a source of livelihood for many local male and female workers in the region. By choosing Texprint, you aren't just buying a bed sheet; you are supporting a community ecosystem.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="users" class="h-7 w-7 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Local Employment</h3>
+                    <p class="text-gray-500">Providing regular income to skilled artisans in Jhargram.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="bg-purple-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="user-check" class="h-7 w-7 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Women Empowerment</h3>
+                    <p class="text-gray-500">Founded by a woman, supporting women in the workforce.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="bg-green-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="sprout" class="h-7 w-7 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Sustainable Growth</h3>
+                    <p class="text-gray-500">Committed to the economic development of the region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-900 font-bold mb-4">Our Range</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our extensive range of sizes and combinations. All bedsheets are also available without pillow covers upon request.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1: King Size -->
+                <div class="group fade-in-section flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition overflow-hidden border border-gray-100">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img 
+                            src="images/photo1.jpg?q=80&w=2070&auto=format&fit=crop" 
+                            alt="Hyperrealistic King Size Bed Sheet Set" 
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                        >
+                        <div class="absolute top-0 right-0 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Premium</div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">King Size Bed Sheet</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> 2 Standard Pillow Covers
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> 1 Side Pillow Cover
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/919434037681?text=Hi,%20I%20am%20interested%20in%20King%20Size%20Bedsheets" target="_blank" class="block w-full text-center bg-gray-50 text-brand-600 font-bold py-2 rounded-lg hover:bg-brand-50 transition border border-gray-200">Inquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Double Bed -->
+                <div class="group fade-in-section flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition overflow-hidden border border-gray-100" style="transition-delay: 100ms;">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img 
+                            src="images/photo2.jpg?q=80&w=2070&auto=format&fit=crop" 
+                            alt="Cozy Double Bed Sheet Set" 
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                        >
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Double Bed Sheet</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> 2 Standard Pillow Covers
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> 1 Side Pillow Cover
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/919434037681?text=Hi,%20I%20am%20interested%20in%20Double%20Bed%20Sheets" target="_blank" class="block w-full text-center bg-gray-50 text-brand-600 font-bold py-2 rounded-lg hover:bg-brand-50 transition border border-gray-200">Inquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Medium Bed -->
+                <div class="group fade-in-section flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition overflow-hidden border border-gray-100" style="transition-delay: 200ms;">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img 
+                            src="images/photo3.jpg?q=80&w=2073&auto=format&fit=crop" 
+                            alt="Medium Bed Sheet Set Interior" 
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                        >
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Medium Bed Sheet</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> Perfectly sized for Medium beds
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> Includes 2 Pillow Covers
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/919434037681?text=Hi,%20I%20am%20interested%20in%20Medium%20Bed%20Sheets" target="_blank" class="block w-full text-center bg-gray-50 text-brand-600 font-bold py-2 rounded-lg hover:bg-brand-50 transition border border-gray-200">Inquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Single Bed -->
+                <div class="group fade-in-section flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition overflow-hidden border border-gray-100">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img 
+                            src="images/photo4.jpg?q=80&w=2118&auto=format&fit=crop" 
+                            alt="Single Bed Sheet Set" 
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                        >
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Single Bed Sheet</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> Ideal for guest or kids rooms
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> Includes 1 Pillow Cover
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/919434037681?text=Hi,%20I%20am%20interested%20in%20Single%20Bed%20Sheets" target="_blank" class="block w-full text-center bg-gray-50 text-brand-600 font-bold py-2 rounded-lg hover:bg-brand-50 transition border border-gray-200">Inquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 5: Loose Covers -->
+                <div class="group fade-in-section flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition overflow-hidden border border-gray-100" style="transition-delay: 100ms;">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img 
+                            src="images/photo5.jpg?q=80&w=2000&auto=format&fit=crop" 
+                            alt="Loose Pillow Covers Texture" 
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                        >
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Loose Covers</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> Loose Pillow Covers
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> Loose Side Pillow Covers
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> Various colors & prints
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/919434037681?text=Hi,%20I%20am%20interested%20in%20Loose%20Pillow%20Covers" target="_blank" class="block w-full text-center bg-gray-50 text-brand-600 font-bold py-2 rounded-lg hover:bg-brand-50 transition border border-gray-200">Inquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 6: Sheets Only -->
+                <div class="group fade-in-section flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition overflow-hidden border border-gray-100" style="transition-delay: 200ms;">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img 
+                            src="images/photo6.jpg?q=80&w=2070&auto=format&fit=crop" 
+                            alt="Bed Sheet Only Fabric Folded" 
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                        >
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Sheets Only</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> All sizes available
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> Without pillow covers
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-600 mt-0.5"></i> Bulk orders welcome
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/919434037681?text=Hi,%20I%20am%20interested%20in%20Sheets%20Only" target="_blank" class="block w-full text-center bg-gray-50 text-brand-600 font-bold py-2 rounded-lg hover:bg-brand-50 transition border border-gray-200">Inquire Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-brand-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Contact Info -->
+                <div class="fade-in-section">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold mb-8">Get In Touch</h2>
+                    <p class="text-brand-100 mb-10 text-lg">
+                        Whether you are a wholesaler, retailer, or looking for premium home furnishing for your home, we are here to assist you.
+                    </p>
+
+                    <div class="space-y-8">
+                        <!-- Address -->
+                        <div class="flex items-start">
+                            <div class="bg-brand-800 p-3 rounded-lg mr-4">
+                                <i data-lucide="map-pin" class="h-6 w-6 text-accent-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Our Location</h4>
+                                <p class="text-brand-100 leading-relaxed">
+                                    Vill – Raghunathpur, PO + Dist – Jhargram,<br>
+                                    West Bengal, PIN – 721507
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start">
+                            <div class="bg-brand-800 p-3 rounded-lg mr-4">
+                                <i data-lucide="mail" class="h-6 w-6 text-accent-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Email Us</h4>
+                                <a href="mailto:texprintigm2013@gmail.com" class="text-brand-100 hover:text-white transition">
+                                    texprintigm2013@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start">
+                            <div class="bg-brand-800 p-3 rounded-lg mr-4">
+                                <i data-lucide="phone" class="h-6 w-6 text-accent-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Call Us</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-brand-100">
+                                    <a href="tel:9434037681" class="hover:text-white transition">+91 94340 37681</a>
+                                    <a href="tel:9609676622" class="hover:text-white transition">+91 96096 76622</a>
+                                    <a href="tel:9433311595" class="hover:text-white transition">+91 94333 11595</a>
+                                    <a href="tel:03221255719" class="hover:text-white transition">03221-255719</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inquiry Form (Mockup) -->
+                <div class="bg-white rounded-2xl p-8 text-gray-800 fade-in-section">
+                    <h3 class="text-2xl font-bold mb-6 text-brand-900">Send an Inquiry</h3>
+                    <form onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden');" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
+                            <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none" placeholder="I am interested in..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-600 text-white py-3 rounded-lg font-bold hover:bg-brand-800 transition shadow-lg">
+                            Send Message
+                        </button>
+                        
+                        <!-- Success Message Mockup -->
+                        <div id="success-msg" class="hidden mt-4 p-3 bg-green-100 text-green-700 rounded-lg text-center text-sm">
+                            Thank you! We will contact you at your number shortly.
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-950 text-gray-400 py-8 border-t border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 flex flex-col items-start">
+                <!-- Footer Logo -->
+                <img src="texprint-logo.png" 
+                     alt="Texprint" 
+                     class="h-10 w-auto mb-3 brightness-0 invert opacity-90"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                >
+                <span class="hidden text-xl font-serif text-white font-bold">Texprint</span>
+                <p class="text-sm mt-1">© 2024 Texprint. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#home" class="hover:text-white transition">Home</a>
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#products" class="hover:text-white transition">Products</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript for Interactions -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Intersection Observer for Fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
